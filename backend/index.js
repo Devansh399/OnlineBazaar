@@ -31,21 +31,21 @@ app.use("/api/payment", require("./routes/paymentRoutes.js"));
 app.use("/api/analytics", require("./routes/analyticsRoutes.js"));
 
 //server frontend in production
-if (process.env.NODE_ENV === "production") {
-  const path = require("path");
+// if (process.env.NODE_ENV === "production") {
+//   const path = require("path");
 
-  app.use(express.static(path.join(__dirname, "../frontend/e-frontend/dist")));
+//   app.use(express.static(path.join(__dirname, "../frontend/e-frontend/dist")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(
-      path.resolve(__dirname, "../frontend/e-frontend/dist", "index.html"),
-    );
-  });
-} else {
-  app.get("/", (req, res) => {
-    res.send("OnlineBazaar API is running... in development mode");
-  });
-}
+//   app.get("*", (req, res) => {
+//     res.sendFile(
+//       path.resolve(__dirname, "../frontend/e-frontend/dist", "index.html"),
+//     );
+//   });
+// } else {
+//   app.get("/", (req, res) => {
+//     res.send("OnlineBazaar API is running... in development mode");
+//   });
+// }
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
