@@ -10,11 +10,11 @@ connectDB();
 const app = express();
 app.use(
   cors({
-    // origin: ["http://localhost:5173", "http://127.0.0.1:5173",  "https://onlinebazaar-frontend.onrender.com"], // Replace with your frontend URL
-    origin: "*",
+    origin: ["http://localhost:5173", "http://127.0.0.1:5173",  "https://onlinebazaar-frontend.onrender.com"], // Replace with your frontend URL
+    // origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     // allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true, // Allow cookies to be sent
+    // credentials: true, // Allow cookies to be sent
   }),
 );
 
